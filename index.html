@@ -28,11 +28,13 @@
         }
     </script>
     <style>
+        /* This handles the background image properly */
         .hero-bg {
-            background: linear-gradient(rgba(11, 79, 58, 0.7), rgba(11, 79, 58, 0.7)), 
-                        url('Winter_Background.png');
+            background: linear-gradient(rgba(11, 79, 58, 0.75), rgba(11, 79, 58, 0.75)), 
+                        url('winter-bg.png');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed; /* Parallax effect */
         }
         .chat-window { display: none; }
         .chat-window.active { display: flex; }
@@ -44,19 +46,18 @@
     <script>new Snowflakes({ color: '#ffffff', count: 50 });</script>
 
     <nav class="p-6 flex justify-between items-center bg-white/90 backdrop-blur-md sticky top-0 z-40 border-b border-winter-silver">
-        <div class="text-2xl font-serif font-bold tracking-widest uppercase text-winter-spruce">Bless Aurora</div>
+        <div class="text-2xl font-serif font-bold tracking-widest uppercase text-winter-spruce text-center md:text-left">Bless Aurora</div>
         <div class="space-x-8 hidden md:flex uppercase text-xs tracking-widest font-bold">
-            <a href="#" class="hover:text-winter-gold">Home</a>
-            <a href="#collection" class="hover:text-winter-gold">Collection</a>
-            <a href="#workshop" class="hover:text-winter-gold">Workshops</a>
-            <a href="#contact" class="hover:text-winter-gold">Contact</a>
+            <a href="#" class="hover:text-winter-gold transition">Home</a>
+            <a href="#collection" class="hover:text-winter-gold transition">Collection</a>
+            <a href="#workshop" class="hover:text-winter-gold transition">Workshops</a>
         </div>
     </nav>
 
-    <header class="hero-bg text-white py-24 px-6 text-center">
-        <div class="container mx-auto max-w-4xl">
+    <header class="hero-bg text-white py-32 px-6 text-center shadow-inner">
+        <div class="container mx-auto max-w-4xl bg-black/20 p-8 rounded-xl backdrop-blur-sm">
             <h1 class="text-5xl md:text-7xl font-serif mb-8 italic">Winter's Quiet Strength</h1>
-            <div class="space-y-6 text-lg md:text-xl leading-relaxed font-light opacity-90">
+            <div class="space-y-6 text-lg md:text-xl leading-relaxed font-light">
                 <p>In the embrace of winter's serene beauty, where snow-laden branches sparkle under a tranquil moon, lies a quiet strength. Imagine the crisp, clean scent of pine and frosted berries, a fragrance that wraps around you like a warm blanket, easing the day's stress and inviting calm.</p>
                 <p>This season, with its gentle hush, reminds us of the power of unity. Like the enduring evergreens, we stand firm, drawing courage from cherished moments with family and friends. Their laughter, the shared warmth of a hearth, and the comforting aroma of home blend into a powerful elixir, recharging our spirits.</p>
                 <p>Let the winter's tranquil aroma be a beacon, guiding us to moments of peaceful reflection. It’s a reminder that even in stillness, there's immense strength. From this wellspring of peace and togetherness, we find the resolve to face tomorrow with renewed vigor, ready to fight for a brighter, better future.</p>
@@ -66,81 +67,98 @@
 
     <section id="collection" class="py-20 bg-winter-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-serif text-center mb-16">The Winter Collection</h2>
+            <h2 class="text-4xl font-serif text-center mb-16 underline decoration-winter-gold underline-offset-8">The Winter Collection</h2>
             <div class="grid md:grid-cols-3 gap-10">
-                <div class="group text-center">
-                    <div class="overflow-hidden rounded-2xl bg-white p-4 shadow-lg mb-4">
-                        <img src="perfume-1.png" alt="Perfume 1" class="hover:scale-105 transition duration-500 mx-auto h-80 object-contain">
+                <div class="text-center">
+                    <div class="rounded-2xl bg-white p-6 shadow-md border border-winter-silver/20 mb-4 h-[400px] flex items-center justify-center">
+                        <img src="perfume-1.png" alt="Perfume 1" class="max-h-full transition duration-500 hover:scale-110">
                     </div>
                     <h3 class="text-xl font-serif font-bold">Midnight Spruce</h3>
                     <p class="text-winter-gold">$85.00</p>
                 </div>
-                <div class="group text-center">
-                    <div class="overflow-hidden rounded-2xl bg-white p-4 shadow-lg mb-4">
-                        <img src="perfume-2.png" alt="Perfume 2" class="hover:scale-105 transition duration-500 mx-auto h-80 object-contain">
+                <div class="text-center">
+                    <div class="rounded-2xl bg-white p-6 shadow-md border border-winter-silver/20 mb-4 h-[400px] flex items-center justify-center">
+                        <img src="perfume-2.png" alt="Perfume 2" class="max-h-full transition duration-500 hover:scale-110">
                     </div>
                     <h3 class="text-xl font-serif font-bold">Frosted Berries</h3>
-                    <p class="text-winter-gold">$65.00</p>
+                    <p class="text-winter-gold">$85.00</p>
                 </div>
-                <div class="group text-center">
-                    <div class="overflow-hidden rounded-2xl bg-white p-4 shadow-lg mb-4">
-                        <img src="perfume-3.png" alt="Perfume 3" class="hover:scale-105 transition duration-500 mx-auto h-80 object-contain">
+                <div class="text-center">
+                    <div class="rounded-2xl bg-white p-6 shadow-md border border-winter-silver/20 mb-4 h-[400px] flex items-center justify-center">
+                        <img src="perfume-3.png" alt="Perfume 3" class="max-h-full transition duration-500 hover:scale-110">
                     </div>
                     <h3 class="text-xl font-serif font-bold">Hearth Glow</h3>
-                    <p class="text-winter-gold">$75.00</p>
+                    <p class="text-winter-gold">$85.00</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="workshop" class="py-20 bg-winter-spruce text-white">
+    <section id="workshop" class="py-24 bg-winter-spruce text-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-serif text-center mb-12 text-winter-silver">Upcoming Workshops</h2>
-            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="bg-white/10 p-8 rounded-2xl border border-winter-silver/30 text-center">
-                    <div class="text-winter-gold font-bold mb-2">SESSION 01</div>
+            <h2 class="text-4xl font-serif text-center mb-16 text-winter-silver uppercase tracking-widest">Upcoming Workshops</h2>
+            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <div class="bg-white/5 p-10 rounded-3xl border border-winter-gold/30 text-center relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 text-winter-gold/20 text-6xl font-serif group-hover:text-winter-gold transition">01</div>
                     <h3 class="text-2xl font-serif mb-4">Winter Scent Crafting</h3>
-                    <p class="text-5xl font-serif mb-2">17</p>
-                    <p class="uppercase tracking-widest text-sm mb-6">January 2026</p>
-                    <button class="bg-winter-gold text-white px-8 py-3 rounded-full uppercase text-xs font-bold hover:bg-white hover:text-winter-spruce transition">Book Seat</button>
+                    <div class="text-6xl font-serif text-winter-gold mb-2">17</div>
+                    <p class="uppercase tracking-widest text-sm mb-8 font-bold">January 2026</p>
+                    <button class="w-full bg-winter-gold py-4 rounded-xl uppercase tracking-tighter font-bold hover:bg-white hover:text-winter-spruce transition duration-300">Book Your Seat</button>
                 </div>
-                <div class="bg-white/10 p-8 rounded-2xl border border-winter-silver/30 text-center">
-                    <div class="text-winter-gold font-bold mb-2">SESSION 02</div>
+                <div class="bg-white/5 p-10 rounded-3xl border border-winter-gold/30 text-center relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 text-winter-gold/20 text-6xl font-serif group-hover:text-winter-gold transition">02</div>
                     <h3 class="text-2xl font-serif mb-4">Emotional Balance Rituals</h3>
-                    <p class="text-5xl font-serif mb-2">18</p>
-                    <p class="uppercase tracking-widest text-sm mb-6">January 2026</p>
-                    <button class="bg-winter-gold text-white px-8 py-3 rounded-full uppercase text-xs font-bold hover:bg-white hover:text-winter-spruce transition">Book Seat</button>
+                    <div class="text-6xl font-serif text-winter-gold mb-2">18</div>
+                    <p class="uppercase tracking-widest text-sm mb-8 font-bold">January 2026</p>
+                    <button class="w-full bg-winter-gold py-4 rounded-xl uppercase tracking-tighter font-bold hover:bg-white hover:text-winter-spruce transition duration-300">Book Your Seat</button>
                 </div>
             </div>
         </div>
     </section>
 
     <div class="fixed bottom-6 right-6 z-50">
-        <button onclick="toggleChat()" class="bg-winter-gold text-white p-4 rounded-full shadow-2xl hover:scale-110 transition">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <button onclick="toggleChat()" class="bg-winter-gold text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
             </svg>
         </button>
-        
-        <div id="ai-chat" class="chat-window absolute bottom-20 right-0 w-80 bg-white shadow-2xl rounded-2xl flex-col border border-winter-silver overflow-hidden">
-            <div class="bg-winter-spruce text-white p-4 font-serif">Scent Specialist AI</div>
-            <div class="h-64 p-4 overflow-y-auto text-sm space-y-4 bg-gray-50" id="chat-box">
-                <div class="bg-winter-silver/20 p-3 rounded-lg text-winter-spruce">Hello! I am your Bless Aurora specialist. How can I help you find the perfect winter scent today?</div>
+        <div id="ai-chat" class="chat-window absolute bottom-24 right-0 w-80 bg-white shadow-2xl rounded-2xl flex-col border border-winter-silver overflow-hidden">
+            <div class="bg-winter-spruce text-white p-5 font-serif flex justify-between">
+                <span>Scent Specialist AI</span>
+                <button onclick="toggleChat()" class="opacity-50 hover:opacity-100">×</button>
             </div>
-            <div class="p-3 border-t flex">
-                <input type="text" placeholder="Type a message..." class="flex-1 text-sm outline-none px-2">
-                <button class="text-winter-gold font-bold text-sm ml-2">Send</button>
+            <div class="h-80 p-5 overflow-y-auto text-sm space-y-4 bg-gray-50/50" id="chat-box">
+                <div class="bg-winter-silver/30 p-4 rounded-tr-xl rounded-bl-xl rounded-br-xl text-winter-spruce leading-relaxed">
+                    Hello! I am your Bless Aurora specialist. How can I help you find the perfect winter scent today?
+                </div>
+            </div>
+            <div class="p-4 border-t flex bg-white">
+                <input type="text" id="chat-input" placeholder="Ask about a scent..." class="flex-1 text-sm outline-none px-2 py-1">
+                <button onclick="sendMessage()" class="text-winter-gold font-bold text-sm px-2">Send</button>
             </div>
         </div>
     </div>
 
-    <footer class="py-10 text-center text-gray-400 text-xs uppercase tracking-widest">
-        &copy; 2026 Bless Aurora. All rights reserved.
+    <footer class="py-20 text-center text-winter-spruce/40 text-[10px] uppercase tracking-[0.3em] font-bold">
+        &copy; 2026 Bless Aurora &bull; Fragrant Harmony &bull; Est. 2025
     </footer>
 
     <script>
         function toggleChat() {
             document.getElementById('ai-chat').classList.toggle('active');
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const box = document.getElementById('chat-box');
+            if(input.value.trim() !== "") {
+                const userMsg = document.createElement('div');
+                userMsg.className = "bg-winter-gold text-white p-3 rounded-tl-xl rounded-bl-xl rounded-br-xl ml-8 text-right self-end";
+                userMsg.innerText = input.value;
+                box.appendChild(userMsg);
+                input.value = "";
+                box.scrollTop = box.scrollHeight;
+            }
         }
     </script>
 
